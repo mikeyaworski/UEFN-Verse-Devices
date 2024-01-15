@@ -3,14 +3,12 @@ using { /Verse.org/Simulation }
 
 # Surely there is a better way to do this, but for now:
 # https://forums.unrealengine.com/t/guide-to-event-subscribing-with-additional-parameters-handler-functions/793925
-GrantItemsHandler := class() {
+GrantItemsHandler := class():
   Device: weapon_manager_device
   LoadoutNumber: int
 
-  HandlerFunction(Agent: agent): void = {
+  HandlerFunction(Agent: agent): void =
     Device.GrantItems(Agent, LoadoutNumber)
-  }
-}
 
 weapon_manager_device := class(creative_device):
   @editable

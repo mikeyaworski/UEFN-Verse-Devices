@@ -4,14 +4,12 @@ using { /Verse.org/Simulation }
 
 # Surely there is a better way to do this, but for now:
 # https://forums.unrealengine.com/t/guide-to-event-subscribing-with-additional-parameters-handler-functions/793925
-SetHpHandler := class() {
+SetHpHandler := class():
   Device: hp_manager_device
   TotalHpAmount: float
 
-  HandlerFunction(Agent: agent): void = {
+  HandlerFunction(Agent: agent): void =
     Device.SetHpForAllPlayers(TotalHpAmount)
-  }
-}
 
 hp_manager_device := class(creative_device):
   @editable
